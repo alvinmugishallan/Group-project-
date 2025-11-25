@@ -1,0 +1,478 @@
+.formContainer {
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.formHeader {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+}
+
+.formHeader h2 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.submissionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formGroup label {
+    font-weight: 500;
+    color: var(--color-text-main);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    background-color: var(--color-background);
+    transition: border-color var(--transition-fast);
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background-color: var(--color-surface);
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 1rem;
+    color: var(--color-text-muted);
+    pointer-events: none;
+}
+
+.inputWrapper input {
+    padding-left: 3rem;
+}
+
+.fileUpload {
+    position: relative;
+    height: 100px;
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color var(--transition-fast);
+}
+
+.fileUpload:hover {
+    border-color: var(--color-primary);
+    background-color: rgba(0, 71, 171, 0.05);
+}
+
+.fileUpload input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.uploadPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-muted);
+}
+
+.formActions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.successState {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.successIcon {
+    color: var(--color-success);
+    margin-bottom: 1.5rem;
+}
+
+.successState h2 {
+    margin-bottom: 1rem;
+}
+
+.successState p {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Animations */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Project List & Card Styles */
+.projectListContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.filterBar {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background-color: var(--color-surface);
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.searchWrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 1rem;
+    color: var(--color-text-muted);
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.categoryFilter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.categorySelect {
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--color-background);
+    cursor: pointer;
+}
+
+.projectGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.projectCard {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+}
+
+.projectCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.categoryBadge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    background-color: var(--color-background);
+    color: var(--color-text-muted);
+}
+
+/* Category Colors */
+.technology {
+    background-color: rgba(0, 71, 171, 0.1);
+    color: var(--color-primary);
+}
+
+.agriculture {
+    background-color: rgba(46, 139, 87, 0.1);
+    color: var(--color-secondary);
+}
+
+.health {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--color-error);
+}
+
+.finance {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--color-warning);
+}
+
+.cardActions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.iconLink {
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+}
+
+.iconLink:hover {
+    color: var(--color-primary);
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.cardTitle a {
+    color: var(--color-text-main);
+    text-decoration: none;
+}
+
+.cardTitle a:hover {
+    color: var(--color-primary);
+}
+
+.cardDescription {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.techTag {
+    background-color: var(--color-background);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.authorInfo,
+.dateInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 4rem;
+    color: var(--color-text-muted);
+}
+
+/* Project Details Styles */
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+    color: var(--color-primary);
+}
+
+.detailsContainer {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+}
+
+.detailsHeader {
+    padding: 2rem;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: var(--color-background);
+}
+
+.detailsTitle {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    color: var(--color-text-main);
+}
+
+.metaInfo {
+    display: flex;
+    gap: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+.detailsContent {
+    padding: 2rem;
+}
+
+.section {
+    margin-bottom: 2.5rem;
+}
+
+.section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-main);
+    border-left: 4px solid var(--color-primary);
+    padding-left: 0.75rem;
+}
+
+.section p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.teamList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.teamList li {
+    background-color: var(--color-background);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border);
+}
+
+.commentsSection {
+    padding: 2rem;
+    background-color: var(--color-background);
+    border-top: 1px solid var(--color-border);
+}
+
+.commentList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.comment {
+    background-color: var(--color-surface);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.commentHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.commentUser {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.commentDate {
+    color: var(--color-text-muted);
+}
+
+.commentForm textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    resize: vertical;
+    margin-bottom: 0.5rem;
+}
+
+.commentForm textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}

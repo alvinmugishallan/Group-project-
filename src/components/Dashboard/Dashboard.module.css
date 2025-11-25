@@ -1,0 +1,122 @@
+.statsCard {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast);
+}
+
+.statsCard:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.statsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.statsTitle {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.statsIcon {
+    color: var(--color-primary);
+    background-color: rgba(0, 71, 171, 0.1);
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+}
+
+.statsValue {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 0.5rem;
+}
+
+.statsTrend {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.trendUp {
+    color: var(--color-success);
+}
+
+.trendDown {
+    color: var(--color-error);
+}
+
+/* Chart Styles */
+.chartContainer {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    height: 100%;
+}
+
+.chartTitle {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-main);
+}
+
+.barChart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 200px;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.barGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.bar {
+    width: 100%;
+    max-width: 40px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    transition: height 0.5s ease, background-color var(--transition-fast);
+    position: relative;
+    min-height: 4px;
+}
+
+.bar:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.barValue {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.bar:hover .barValue {
+    opacity: 1;
+}
+
+.barLabel {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}

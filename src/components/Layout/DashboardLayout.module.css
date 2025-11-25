@@ -1,0 +1,139 @@
+.dashboardContainer {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--color-background);
+}
+
+.sidebar {
+    width: 260px;
+    background-color: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+}
+
+.sidebarHeader {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sidebarHeader h2 {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.roleBadge {
+    background-color: rgba(0, 71, 171, 0.1);
+    color: var(--color-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.sidebarNav {
+    padding: var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: 0.75rem 1rem;
+    color: var(--color-text-muted);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    font-weight: 500;
+}
+
+.navItem:hover {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+}
+
+.navItem.active {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.sidebarFooter {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.logoutBtn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    color: var(--color-error);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+}
+
+.logoutBtn:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+.mainContent {
+    flex: 1;
+    margin-left: 260px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.topHeader {
+    height: 70px;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-xl);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.topHeader h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.userProfile {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.contentArea {
+    padding: var(--spacing-xl);
+    flex: 1;
+}
